@@ -8,5 +8,5 @@ def helloWorld():
    return "Hello World"
 
 @bp.route('/')
-def renderHome():
-    return render_template('layout.html')
+def renderIndex():
+    return render_template('index.html')
