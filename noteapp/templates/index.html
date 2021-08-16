@@ -2,5 +2,11 @@
 
 
 {% block content %}
-  <h1> Index page </h1>
+    <div class='notelist'>
+        {% for i in range(0, 48) %}
+            <div class='note'>
+                <p> example note </p>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
