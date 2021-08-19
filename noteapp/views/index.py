@@ -1,12 +1,20 @@
 from flask import Blueprint, render_template
+import glob
 
-bp = Blueprint("noteapp", __name__, template_folder='templates')
+bp = Blueprint('index', __name__, template_folder='templates')
 
+def fetchNotes():
+    notes_text = []
+    notes = glob.glob("noteapp/notes/*.note")
+    
+    for note in notes:
+        with open(note) as note_file:
+            notes_text.append(note_file.read())
+        note_file.close()
 
-@bp.route('/helloworld')
-def helloWorld():
-   return "Hello World"
+    return notes_text
+
 
 @bp.route('/')
-def renderIndex():
-    return render_template('index.html')
+def show():
+    return render_template('index.html', notes=fetchNotes())

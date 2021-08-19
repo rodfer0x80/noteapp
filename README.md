@@ -1,3 +1,3 @@
-#noteapp
-### Notetaking app in the browser
+noteapp
+### notetaking app in the browser
 
